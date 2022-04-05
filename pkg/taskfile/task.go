@@ -4,7 +4,9 @@ type Task struct {
 	// Name is the task identifier
 	Name string `json:"name"`
 
-	NeedOf Selector
+	// NeedOf makes this task an "implicit" need of other tasks based on the label selector
+	// similar to that of a "pattern rule" in a Makefile
+	NeedOf Selector `json:"needOf,omitempty"`
 
 	// Labels are intended to be used to specify identifying attributes of tasks that are
 	// meaningful and relevant to users, but do not directly imply semantics to the core system.
