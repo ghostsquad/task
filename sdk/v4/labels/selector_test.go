@@ -26,9 +26,9 @@ import (
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/hashicorp/go-multierror"
 
-	"github.com/go-task/task/v4/pkg/labels/field"
-	"github.com/go-task/task/v4/pkg/labels/selection"
-	"github.com/go-task/task/v4/pkg/pat/set"
+	"github.com/go-task/task/sdk/v4/labels/field"
+	"github.com/go-task/task/sdk/v4/labels/selection"
+	"github.com/go-task/task/sdk/v4/pat/set"
 )
 
 var (

@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"github.com/go-task/task/v4/internal/execext"
-	"github.com/go-task/task/v4/internal/logger"
-	"github.com/go-task/task/v4/taskfile"
+	"github.com/go-task/task/internal/execext"
+	"github.com/go-task/task/internal/logger"
+	"github.com/go-task/task/taskfile"
 )
 
 var (

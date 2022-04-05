@@ -20,6 +20,8 @@ import (
 	"fmt"
 	"sort"
 	"strings"
+
+	"github.com/go-task/task/sdk/v4/labels/field"
 )
 
 // Labels allows you to present labels independently from their storage.
@@ -157,13 +159,7 @@ func ConvertSelectorToLabelsMap(selector string, opts ...field.PathOption) (Set,
 			return labelsMap, fmt.Errorf("invalid selector: %s", l)
 		}
 		key := strings.TrimSpace(l[0])
-		if err := validateLabelKey(key, field.ToPath(opts...)); err != nil {
-			return labelsMap, err
-		}
 		value := strings.TrimSpace(l[1])
-		if err := validateLabelValue(key, value, field.ToPath(opts...)); err != nil {
-			return labelsMap, err
-		}
 		labelsMap[key] = value
 	}
 	return labelsMap, nil

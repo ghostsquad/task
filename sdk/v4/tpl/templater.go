@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"text/template"
 
-	"github.com/go-task/task/v4/pkg/lazy"
-	"github.com/go-task/task/v4/pkg/pat"
-	"github.com/go-task/task/v4/pkg/taskfile"
+	"github.com/go-task/task/sdk/v4/lazy"
+	"github.com/go-task/task/sdk/v4/pat"
+	"github.com/go-task/task/sdk/v4/taskfile"
 
 	sprig "github.com/go-task/slim-sprig"
 )

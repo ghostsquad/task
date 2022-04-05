@@ -1,7 +1,7 @@
 package compiler
 
 import (
-	"github.com/go-task/task/v4/taskfile"
+	"github.com/go-task/task/taskfile"
 )
 
 // Compiler handles compilation of a task before its execution.

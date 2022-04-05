@@ -9,9 +9,9 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/go-task/task/v4/internal/execext"
-	"github.com/go-task/task/v4/internal/templater"
-	"github.com/go-task/task/v4/taskfile"
+	"github.com/go-task/task/internal/execext"
+	"github.com/go-task/task/internal/templater"
+	"github.com/go-task/task/taskfile"
 )
 
 var (

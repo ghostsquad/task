@@ -6,11 +6,12 @@ import (
 	"io"
 	"testing"
 
-	"github.com/go-task/task/v4/internal/templater"
-	"github.com/go-task/task/v4/taskfile"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/go-task/task/v4/internal/output"
+	"github.com/go-task/task/internal/templater"
+	"github.com/go-task/task/taskfile"
+
+	"github.com/go-task/task/internal/output"
 )
 
 func TestInterleaved(t *testing.T) {

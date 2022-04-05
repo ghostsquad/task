@@ -7,11 +7,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/go-task/task/v4/internal/compiler"
-	"github.com/go-task/task/v4/internal/execext"
-	"github.com/go-task/task/v4/internal/logger"
-	"github.com/go-task/task/v4/internal/templater"
-	"github.com/go-task/task/v4/taskfile"
+	"github.com/go-task/task/internal/compiler"
+	"github.com/go-task/task/internal/execext"
+	"github.com/go-task/task/internal/logger"
+	"github.com/go-task/task/internal/templater"
+	"github.com/go-task/task/taskfile"
 )
 
 var _ compiler.Compiler = &CompilerV2{}

@@ -24,10 +24,10 @@ import (
 
 	"github.com/hashicorp/go-multierror"
 
-	"github.com/go-task/task/v4/pkg/labels/field"
-	"github.com/go-task/task/v4/pkg/labels/selection"
-	"github.com/go-task/task/v4/pkg/pat/set"
-	"github.com/go-task/task/v4/pkg/pat/slices"
+	"github.com/go-task/task/sdk/v4/labels/field"
+	"github.com/go-task/task/sdk/v4/labels/selection"
+	"github.com/go-task/task/sdk/v4/pat/set"
+	"github.com/go-task/task/sdk/v4/pat/slices"
 )
 
 var (
@@ -65,7 +65,7 @@ type Selector interface {
 	// If this selector doesn't want to select anything, it will return selectable=false.
 	Requirements() (requirements Requirements, selectable bool)
 
-	// Make a deep copy of the selector.
+	// DeepCopySelector makes a deep copy of the selector.
 	DeepCopySelector() Selector
 
 	// RequiresExactMatch allows a caller to introspect whether a given selector
@@ -131,7 +131,6 @@ func (a ByKey) Less(i, j int) bool { return a[i].key < a[j].key }
 // The zero value of Requirement is invalid.
 // Requirement implements both set based match and exact match
 // Requirement should be initialized via NewRequirement constructor for creating a valid Requirement.
-// +k8s:deepcopy-gen=true
 type Requirement struct {
 	key      string
 	operator selection.Operator

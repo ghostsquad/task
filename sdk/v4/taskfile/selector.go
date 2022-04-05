@@ -1,7 +1,7 @@
 package taskfile
 
 import (
-	"github.com/go-task/task/v4/pkg/labels"
+	"github.com/go-task/task/sdk/v4/labels"
 )
 
 type Selector interface {
@@ -23,7 +23,7 @@ type Selector interface {
 	// If this selector doesn't want to select anything, it will return selectable=false.
 	Requirements() (requirements labels.Requirements, selectable bool)
 
-	// Make a deep copy of the selector.
+	// DeepCopySelector makes a deep copy of the selector.
 	DeepCopySelector() Selector
 
 	// RequiresExactMatch allows a caller to introspect whether a given selector

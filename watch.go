@@ -10,10 +10,11 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/go-task/task/v4/internal/logger"
-	"github.com/go-task/task/v4/internal/status"
-	"github.com/go-task/task/v4/taskfile"
 	"github.com/radovskyb/watcher"
+
+	"github.com/go-task/task/internal/logger"
+	"github.com/go-task/task/internal/status"
+	"github.com/go-task/task/taskfile"
 )
 
 const watchInterval = 5 * time.Second

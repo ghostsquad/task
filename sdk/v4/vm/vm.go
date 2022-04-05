@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/go-task/task/v4/pkg/pat"
-	"github.com/go-task/task/v4/pkg/taskfile"
+	"github.com/go-task/task/sdk/v4/pat"
+	"github.com/go-task/task/sdk/v4/taskfile"
 )
 
 // VM is the core interpreter and is the touchpoint used to parse and execute a Taskfile.
@@ -37,6 +37,6 @@ func (vm *VM) Run(ctx context.Context, name string) error {
 	return fmt.Errorf("unknown task: %s", name)
 }
 
-func (vm *VM) RunT(ctx context.Context, t *taskfile.Task) error {
+func (vm *VM) RunT(ctx context.Context, t taskfile.Task) error {
 	return nil
 }

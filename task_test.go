@@ -13,8 +13,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/go-task/task/v4"
-	"github.com/go-task/task/v4/taskfile"
+	"github.com/go-task/task/taskfile"
 )
 
 func init() {

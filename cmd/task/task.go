@@ -14,10 +14,9 @@ import (
 	"github.com/spf13/pflag"
 	"mvdan.cc/sh/v3/syntax"
 
-	"github.com/go-task/task/v4"
-	"github.com/go-task/task/v4/args"
-	"github.com/go-task/task/v4/internal/logger"
-	"github.com/go-task/task/v4/taskfile"
+	"github.com/go-task/task/args"
+	"github.com/go-task/task/internal/logger"
+	"github.com/go-task/task/taskfile"
 )
 
 var (

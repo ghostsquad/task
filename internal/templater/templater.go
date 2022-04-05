@@ -5,7 +5,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/go-task/task/v4/taskfile"
+	"github.com/go-task/task/taskfile"
 )
 
 // Templater is a help struct that allow us to call "replaceX" funcs multiple
