@@ -14,6 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+// Modifications by github.com/ghostsquad
+// Compare to https://github.com/kubernetes/apimachinery/blob/v0.23.5/pkg/util/validation/field/errors.go
+
 package field
 
 import (

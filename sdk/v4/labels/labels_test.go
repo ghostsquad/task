@@ -14,6 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+// Modifications by github.com/ghostsquad
+// Compare to https://github.com/kubernetes/apimachinery/blob/v0.23.5/pkg/labels/labels_test.go
+// - Switched to using generic set (now possible in go 1.18)
+// - Switched to using github.com/hashicorp/go-multierror instead of custom error list implementation
+// - Removed field validation checks (not required for task)
+// - Removed extra/dead code not needed by Task
+
 package labels
 
 import (
