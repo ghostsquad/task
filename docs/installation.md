@@ -135,19 +135,19 @@ First, make sure you have [Go][go] properly installed and setup.
 You can easily install the latest release globally by running:
 
 ```bash
-go install github.com/go-task/task/v3/cmd/task@latest
+go install github.com/go-task/task/v4/cmd/task@latest
 ```
 
 Or you can install into another directory:
 
 ```bash
-env GOBIN=/bin go install github.com/go-task/task/v3/cmd/task@latest
+env GOBIN=/bin go install github.com/go-task/task/v4/cmd/task@latest
 ```
 
 If using Go 1.15 or earlier, instead use:
 
 ```bash
-env GO111MODULE=on go get -u github.com/go-task/task/v3/cmd/task@latest
+env GO111MODULE=on go get -u github.com/go-task/task/v4/cmd/task@latest
 ```
 
 > For CI environments we recommend using the [Install Script](#get-the-binary)

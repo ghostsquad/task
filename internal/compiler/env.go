@@ -4,7 +4,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/go-task/task/v3/taskfile"
+	"github.com/go-task/task/v4/taskfile"
 )
 
 // GetEnviron the all return all environment variables encapsulated on a

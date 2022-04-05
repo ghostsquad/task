@@ -12,6 +12,8 @@ vars:
   GO_PACKAGES:
     sh: go list ./...
 
+  BIN_DIR: ./tmp/bin
+
 env:
   CGO_ENABLED: '0'
 
@@ -40,6 +42,10 @@ tasks:
         vars: {REPO: github.com/goreleaser/goreleaser}
       - task: go-get
         vars: {REPO: github.com/goreleaser/godownloader}
+
+  tooling:
+    cmds:
+      - cat tools.go | grep _ | awk -F'"' '{print $2}' | xargs -tI % go install %
 
   clean:
     desc: Cleans temp files and folders
