@@ -1,11 +1,47 @@
 package taskfile
 
 type Task struct {
-	// Name is the task identifier
-	Name string `json:"name"`
-
 	// NeedOf makes this task an "implicit" need of other tasks based on the label selector
-	// similar to that of a "pattern rule" in a Makefile
+	// similar to that of a "pattern rule" in a Makefile (see https://www.tack.ch/gnu/make-3.82/make_91.html)
+	// When used, the labels that were used to match the other task are available in template strings for this task.
+	//
+	// Simple Example
+	//
+	//  tasks:
+	//    breakfast
+	//	    labels:
+	//		  meal: breakfast
+	//    oven:
+	//      needOf:
+	//        matchLabels:
+	// 		    meal: breakfast
+	//
+	// In this example, `oven` will have access to all the labels of the `breakfast` through
+	//
+	//  {{ .NeedOf.Labels }}
+	//
+	// The `oven` task will also have access to all the vars of the NeedOf task with:
+	//
+	//  {{ .NeedOf.Vars }}
+	//
+	// Complex Example
+	//
+	//  tasks:
+	//    breakfast
+	//	    labels:
+	//		  meal: breakfast
+	//		  created-in: kitchen
+	//    oven:
+	//		needOf:
+	//        matchExpressions:
+	//		  - {key: created-in, operator: In, values: [kitchen]}
+	//		  - {key: meal, operator: Exists}
+	//	    do:
+	//		  - |
+	//		    echo {{mustGet .NeedOf.Labels "meal"}}
+	//
+	//  Any task that with the label of `created-in: kitchen` and has a label with the key `meal` (regardless of value) will get the oven task as a "need".
+	//  The `oven` task may want to know what is "needing", and some other information, which is available from the object `{{.NeedOf}}`
 	NeedOf Selector `json:"needOf,omitempty"`
 
 	// Labels are intended to be used to specify identifying attributes of tasks that are
@@ -23,7 +59,7 @@ type Task struct {
 	Example string `json:"example,omitempty"`
 
 	// Steps are the things that will run in serial
-	Do Steps `json:"steps,omitempty"`
+	Do Steps `json:"do,omitempty"`
 
 	// Dir is the directory in which steps will be executed from (default: Taskfile directory)
 	Dir string `json:"dir,omitempty"`
@@ -76,7 +112,7 @@ type Task struct {
 	// Independent needs are executed in parallel.
 	Needs Needs `json:"needs,omitempty"`
 
-	// SerialGroups is an array of arbitrary tag-like strings. Executions of this task
+	// SerialGroups is an array of arbitrary label-like strings. Executions of this task
 	// and other tasks referencing the same tags will be serialized.
 	SerialGroups SerialGroups `json:"serialGroups,omitempty"`
 

@@ -6,7 +6,6 @@ type Steps []Step
 // The use of Run & Args is mutually exclusive with Task
 type Step struct {
 	Sh
-
 	// Task allows you to call another task (instead of command via the `run` field).
 	// Task is mutually exclusive with `run`. If both are defined, and error will be produced.
 	Task string `json:"task,omitempty"`

@@ -23,10 +23,10 @@ type LazyTemplateOptions struct {
 	funcMap  template.FuncMap
 }
 
-func WithData(vars taskfile.Vars) pat.Option[*LazyTemplateOptions] {
+func WithVars(vars taskfile.Vars) pat.Option[*LazyTemplateOptions] {
 	return func(o *LazyTemplateOptions) error {
 		for k, v := range vars {
-			o.data[k] = v
+			o.lazyData[k] = v
 		}
 		return nil
 	}

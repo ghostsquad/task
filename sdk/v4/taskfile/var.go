@@ -1,8 +1,8 @@
 package taskfile
 
-type Vars map[string]Var
+type Vars map[string]VarValue
 
-type Var struct {
+type VarValue struct {
 	// Eval can be used with the go templating in order make a decision
 	// we use strconv.ParseBool to evaluate the result
 	Eval string `json:"eval,omitempty"`

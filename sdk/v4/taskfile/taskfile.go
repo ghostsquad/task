@@ -2,7 +2,7 @@ package taskfile
 
 type PatternVar struct {
 	Pattern string
-	Var     Var
+	Var     VarValue
 }
 
 type Taskfile struct {

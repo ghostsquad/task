@@ -39,15 +39,15 @@ type Lazy[T any] struct {
 	err   error
 }
 
-func (this *Lazy[T]) Eval() (T, error) {
-	this.once.Do(func() {
-		if this.New != nil {
-			v, err := this.New()
-			this.value = v
-			this.err = err
-			this.New = nil // so that f can now be GC'ed
+func (l *Lazy[T]) Eval() (T, error) {
+	l.once.Do(func() {
+		if l.New != nil {
+			v, err := l.New()
+			l.value = v
+			l.err = err
+			l.New = nil // so that f can now be GC'ed
 		}
 	})
 
-	return this.value, this.err
+	return l.value, l.err
 }
