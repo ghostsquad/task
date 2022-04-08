@@ -28,7 +28,7 @@ type Step struct {
 	//	  echo:
 	//		matrix:
 	//		- env: ["dev", "staging", "prod"]
-	//      - ham: ["bacon", "eggs"]
+	//		- ham: ["bacon", "eggs"]
 	//		steps:
 	//		- run: "echo {{.Matrix.env}} {{.Matrix.ham}}"
 	//
